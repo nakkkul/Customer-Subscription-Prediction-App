@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            width: 100%;
+            max-width: 400px;
+            overflow-y: auto;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Predict Subscription Outcome</h1>
+        <form action="/predict" method="POST">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="default">Default (has credit in default):</label>
+            <select id="default" name="default">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label for="balance">Balance (INR):</label>
+            <input type="number" step="0.01" id="balance" name="balance" required>
+
+            <label for="house_loan">House Loan (has housing loan?):</label>
+            <select id="house_loan" name="house_loan">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label for="pers_loan">Personal Loan (has personal loan?):</label>
+            <select id="pers_loan" name="pers_loan">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label for="last_contact_month">Last Contact Month (Enter Number):</label>
+            <input type="number" id="last_contact_month" name="last_contact_month" required>
+
+            <label for="contact_duration">Contact Duration (in seconds):</label>
+            <input type="number" step="0.01" id="contact_duration" name="contact_duration" required>
+
+            <label for="campaign">Number of contacts during this campaign (including last contact):</label>
+            <input type="number" id="campaign" name="campaign" required>
+
+            <label for="passed_days">Number of days passed since last contact in a previous campaign:</label>
+            <input type="number" step="0.01" id="passed_days" name="passed_days" required>
+
+            <label for="previous_days">Number of contacts before this campaign:</label>
+            <input type="number" step="0.01" id="previous_days" name="previous_days" required>
+
+            <label for="job">Job:</label>
+            <select id="job" name="job">
+                <option value="blue-collar">Blue-collar</option>
+                <option value="entrepreneur">Entrepreneur</option>
+                <option value="housemaid">Housemaid</option>
+                <option value="management">Management</option>
+                <option value="retired">Retired</option>
+                <option value="self-employed">Self-employed</option>
+                <option value="services">Services</option>
+                <option value="student">Student</option>
+                <option value="technician">Technician</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for="marital_status">Marital Status:</label>
+            <select id="marital_status" name="marital_status">
+                <option value="married">Married</option>
+                <option value="single">Single</option>
+                <option value="divorced">Divorced</option>
+            </select>
+
+            <label for="education">Education:</label>
+            <select id="education" name="education">
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="tertiary">Tertiary</option>
+                <option value="unknown">Unknown</option>
+            </select>
+
+            <label for="contact">Contact Type:</label>
+            <select id="contact" name="contact">
+                <option value="unknown">Unknown</option>
+                <option value="cellular">Cellular</option>
+                <option value="telephone">Telephone</option>
+            </select>
+
+            <label for="prev_out_come">Previous Outcome:</label>
+            <select id="prev_out_come" name="prev_out_come">
+                <option value="unknown">Unknown</option>
+                <option value="failure">Failure</option>
+                <option value="other">Other</option>
+                <option value="success">Success</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
