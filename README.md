@@ -31,7 +31,7 @@ Performance Metrics<br>
 Test Accuracy: 0.903<br>
 ROC AUC Score: 0.93<br>
 
-![App Interface](images/interface.png)
+![App Interface](./images/inter.png)
 
 **Setup**
 
