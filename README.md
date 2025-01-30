@@ -1,4 +1,4 @@
-## Customer Subscription Prediction Web Application 
+## Customer Subscription Prediction Web Application
 
 ### 📜 Overview
 The Customer Subscription Prediction Web App is a machine learning-powered tool that helps determine the likelihood of a customer subscribing based on input data. Built with Flask and a robust predictive model, the application provides instant insights to aid targeted marketing and customer engagement strategies. The app is deployed on Render, ensuring accessibility and seamless integration with business workflows.
